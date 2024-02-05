@@ -5,3 +5,4 @@
 
 ### Temas de estudo
 - Atomic Design
+- react-hook-form -> validação com zod
