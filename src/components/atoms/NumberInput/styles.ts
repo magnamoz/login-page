@@ -5,5 +5,5 @@ export const Input = styled.input`
   background-color: ${(props) => props.theme['gray-700']};
   width: 16rem;
   padding: 0.375rem;
-  border-radius: 4px;
+  border-radius: 0.5rem;
 `;
