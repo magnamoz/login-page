@@ -32,7 +32,7 @@ export const LoginForm: React.FC = () => {
           required
           placeholder={errors.cpf ? errors.cpf.message : 'Digite sua senha'}
         />
-        <Button />
+        <Button title="Fazer Login" type="submit" />
       </form>
     </S.Container>
   );
