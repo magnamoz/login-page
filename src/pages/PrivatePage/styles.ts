@@ -7,5 +7,5 @@ export const Title = styled.h1`
 export const Space = styled.br``;
 
 export const Paragraph = styled.p`
-  text-decoration:  underline overline  ${(props) => props.theme['green-700']};
+  text-decoration:  underline  ${(props) => props.theme['green-700']};
 `;
