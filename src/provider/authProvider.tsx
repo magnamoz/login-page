@@ -1,43 +1,52 @@
 import React, {
   PropsWithChildren,
   createContext,
-  useContext,
+  // useContext,
   useEffect,
   useMemo,
-  useState,
+  // useState,
 } from 'react';
 import axios from 'axios';
 
-import { getToken, login, logout } from '../service';
+import { getToken, isAuthenticated, login, logout } from '../service';
 
 interface AuthContextProps {
   token?: string | null;
-  setToken?: (newToken: string) => void;
+  //setToken?: (newToken: string) => void;
 }
 
 export const AuthContext = createContext<AuthContextProps>({});
 
 const AuthProvider = ({ children }: PropsWithChildren<AuthContextProps>) => {
-  const [token, setToken_] = useState(getToken());
+  // const [token, setToken] = useState(getToken());
 
-  const setToken = (newToken: string) => {
-    setToken_(newToken);
-  };
+  // const setNewToken = (newToken: string) => {
+  //   setToken(newToken);
+  // };
+
+  const token = getToken();
 
   useEffect(() => {
-    if (token) {
+    if (isAuthenticated()) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      login(token);
+      token && login(token);
     } else {
       delete axios.defaults.headers.common['Authorization'];
       logout();
     }
   }, [token]);
 
+  // const contextValue = useMemo(
+  //   () => ({
+  //     token,
+  //     setNewToken,
+  //   }),
+  //   [token],
+  // );
+
   const contextValue = useMemo(
     () => ({
       token,
-      setToken,
     }),
     [token],
   );
@@ -47,8 +56,9 @@ const AuthProvider = ({ children }: PropsWithChildren<AuthContextProps>) => {
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+// TODO decidir se uso essa abordagem ou auth service utils
+// export const useAuth = () => {
+//   return useContext(AuthContext);
+// };
 
 export default AuthProvider;

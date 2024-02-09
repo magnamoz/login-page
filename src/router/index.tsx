@@ -1,13 +1,14 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { useAuth } from '../provider/authProvider';
+// import { useAuth } from '../provider/authProvider';
 import { LandingPage, LoginPage, LogoutPage } from '../pages';
 import { PrivateRoute } from './PrivateRoute';
 import { ROUTES } from '../constants/routes';
+import { isAuthenticated } from '../service';
 
 const Routes = () => {
-  const { token } = useAuth();
+  //const { token } = useAuth();
 
   const publicRoutes = [
     {
@@ -40,9 +41,11 @@ const Routes = () => {
     },
   ];
 
+  console.log('token no index', isAuthenticated());
+
   const router = createBrowserRouter([
     ...publicRoutes,
-    ...(!token ? routesForNotAuthenticatedOnly : []),
+    ...(!isAuthenticated() ? routesForNotAuthenticatedOnly : []),
     ...protectedRoutes,
   ]);
 
