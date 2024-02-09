@@ -1,10 +1,8 @@
 import React, {
   PropsWithChildren,
   createContext,
-  // useContext,
   useEffect,
   useMemo,
-  // useState,
 } from 'react';
 import axios from 'axios';
 
@@ -12,18 +10,11 @@ import { getToken, isAuthenticated, login, logout } from '../service';
 
 interface AuthContextProps {
   token?: string | null;
-  //setToken?: (newToken: string) => void;
 }
 
 export const AuthContext = createContext<AuthContextProps>({});
 
 const AuthProvider = ({ children }: PropsWithChildren<AuthContextProps>) => {
-  // const [token, setToken] = useState(getToken());
-
-  // const setNewToken = (newToken: string) => {
-  //   setToken(newToken);
-  // };
-
   const token = getToken();
 
   useEffect(() => {
@@ -36,14 +27,6 @@ const AuthProvider = ({ children }: PropsWithChildren<AuthContextProps>) => {
     }
   }, [token]);
 
-  // const contextValue = useMemo(
-  //   () => ({
-  //     token,
-  //     setNewToken,
-  //   }),
-  //   [token],
-  // );
-
   const contextValue = useMemo(
     () => ({
       token,
@@ -55,10 +38,5 @@ const AuthProvider = ({ children }: PropsWithChildren<AuthContextProps>) => {
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );
 };
-
-// TODO decidir se uso essa abordagem ou auth service utils
-// export const useAuth = () => {
-//   return useContext(AuthContext);
-// };
 
 export default AuthProvider;

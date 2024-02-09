@@ -19,8 +19,6 @@ export const useLoginForm = () => {
     login(password);
 
     navigate(ROUTES.PROTECTED, { replace: true });
-    //TODO: pensar em outra abordagem
-    window.location.reload();
   };
 
   return {
