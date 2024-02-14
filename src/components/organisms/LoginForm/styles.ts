@@ -17,3 +17,8 @@ export const Container = styled.div`
     gap: 1rem;
   }
 `;
+
+export const ErrorSpan = styled.span`
+  color: ${(props) => props.theme['red-500']};
+  font-size: 0.875rem;
+`;

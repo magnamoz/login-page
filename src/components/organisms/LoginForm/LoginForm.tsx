@@ -17,6 +17,7 @@ export const LoginForm: React.FC = () => {
     onSubmit,
   } = useLoginForm();
 
+  console.log('erros', errors);
   return (
     <S.Container>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -24,14 +25,18 @@ export const LoginForm: React.FC = () => {
           label="cpf"
           register={register}
           required
-          placeholder={errors.cpf ? errors.cpf.message : 'Digite seu CPF'}
+          placeholder="Digite seu CPF"
         />
+        {errors.cpf && <S.ErrorSpan>{errors.cpf.message}</S.ErrorSpan>}
         <PasswordInput
           label="password"
           register={register}
           required
-          placeholder={errors.cpf ? errors.cpf.message : 'Digite sua senha'}
+          placeholder="Digite sua senha"
         />
+        {errors.password && (
+          <S.ErrorSpan>{errors.password.message}</S.ErrorSpan>
+        )}
         <Button title="Fazer Login" type="submit" />
       </form>
     </S.Container>

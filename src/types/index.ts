@@ -1,4 +1,9 @@
-import { FieldErrors, UseFormRegister, Path } from 'react-hook-form';
+import {
+  FieldErrors,
+  UseFormRegister,
+  Path,
+  FieldValues,
+} from 'react-hook-form';
 
 export interface IFormValues {
   cpf: number;
@@ -9,6 +14,6 @@ export interface InputProps {
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
   required: boolean;
-  error?: FieldErrors;
+  error?: FieldErrors<FieldValues>;
   placeholder?: string;
 }

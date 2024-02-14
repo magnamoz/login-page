@@ -10,6 +10,7 @@ import { ROUTES } from '../../../constants';
 export const useLoginForm = () => {
   const form = useForm<IFormValues>({
     resolver: zodResolver(LoginFormSchema),
+    mode: 'onBlur',
   });
 
   const navigate = useNavigate();

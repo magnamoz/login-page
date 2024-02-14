@@ -12,16 +12,14 @@ export const NumberInput = ({
   register,
 }: InputProps) => {
   return (
-    <>
-      <S.Input
-        aria-label="Número do CPF"
-        placeholder={placeholder}
-        maxLength={14}
-        {...register(label, {
-          required,
-          onChange: (e) => (e.target.value = cpfMask(e.target.value)),
-        })}
-      />
-    </>
+    <S.Input
+      aria-label="Número do CPF"
+      placeholder={placeholder}
+      maxLength={14}
+      {...register(label, {
+        required,
+        onChange: (e) => (e.target.value = cpfMask(e.target.value)),
+      })}
+    />
   );
 };
