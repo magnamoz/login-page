@@ -1,0 +1,7 @@
+{
+  "bail": 1,
+  "verbose": true,
+  "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
+  "coverageReporters": "lcov",
+  "testEnvironment": "jsdom"
+}

@@ -8,6 +8,14 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
     ],
+    "overrides": [
+      {
+        "files": ["tests/**/*"],
+        "env": {
+          "jest": true
+        }
+      }
+    ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "ecmaFeatures": {
