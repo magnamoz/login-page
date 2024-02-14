@@ -17,7 +17,7 @@ export const PasswordErrorModal: React.FC<PasswordErrorModalProps> = ({
           deve conter apenas caracteres alfanuméricos: A-Z, a-z, 0-9
         </S.ItemList>
         <S.ItemList>
-          deve ter tenha ao menos: 1 letra maiúscula, 1 minúscula e 1 número
+          deve ter ao menos: 1 letra maiúscula, 1 minúscula e 1 número
         </S.ItemList>
         <S.ItemList>deve ter entre 5 e 8 caracteres no total</S.ItemList>
       </S.List>

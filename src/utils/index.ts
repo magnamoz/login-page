@@ -34,7 +34,7 @@ export const validateCpf = (cpf: string) => {
  */
 export const validatePassword = (password: string) => {
   // deve conter apenas caracteres alfanuméricos: A-Z, a-z, 0-9
-  // deve ter tenha ao menos: 1 letra maiúscula, 1 minúscula e 1 número
+  // deve ter ao menos: 1 letra maiúscula, 1 minúscula e 1 número
   // deve ter entre 5 e 8 caracteres no total
   if (password.match('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{5,8}$'))
     return true;
