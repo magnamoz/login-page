@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { validateCpf } from '../utils';
+import { validateCpf, validatePassword } from '../utils';
 
 export const LoginFormSchema = z.object({
   cpf: z
@@ -15,7 +15,13 @@ export const LoginFormSchema = z.object({
     .string({
       required_error: 'Necessário informar a senha',
     })
-    .min(1, { message: 'Campo obrigatório' }),
+    .min(1, { message: 'Campo obrigatório' })
+    .refine(
+      (value) => {
+        return validatePassword(value);
+      },
+      { message: 'Senha inválida' },
+    ),
 });
 
 export type LoginFormSchemaInput = z.input<typeof LoginFormSchema>;
