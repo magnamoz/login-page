@@ -4,6 +4,10 @@
 - React
 - TypeScript
 - styled-components
+- Axios
+- react-router-dom
+- react-hook-form
+- Jest
 
 ### Temas de estudo
 - Atomic Design
