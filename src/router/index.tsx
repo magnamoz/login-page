@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { LandingPage } from '../pages/LandingPage';
 import { LogoutPage } from '../pages/LogoutPage';
 import { PrivatePage } from '../pages/PrivatePage';
+import { ErrorPage } from 'pages/ErrorPage';
 import { LoginPage } from '../pages';
 
 import { PrivateRoute } from './PrivateRoute';
@@ -42,9 +43,16 @@ const Routes = () => {
     },
   ];
 
+  const ErrorRoutes = [
+    {
+      path: ROUTES.ERROR,
+      element: <ErrorPage />,
+    },
+  ];
+
   const router = createBrowserRouter([
     ...publicRoutes,
-    ...(!isAuthenticated() ? routesForNotAuthenticatedOnly : []),
+    ...(!isAuthenticated() ? routesForNotAuthenticatedOnly : ErrorRoutes),
     ...protectedRoutes,
   ]);
 

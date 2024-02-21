@@ -3,4 +3,5 @@ export const ROUTES = {
   LOGOUT: '/sair',
   LANDING_PAGE: '/',
   PROTECTED: '/protegido',
+  ERROR: '/error',
 };
