@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { DefaultTemplate } from '../../components/templates/DefaultTemplate';
-import { Button } from '../../components/atoms/Button';
+import { GenericButton } from '../../components/atoms/Button';
 
 import * as S from './styles';
 import { useLandingPage } from './LandingPage.logic';
@@ -15,7 +15,7 @@ export const LandingPage: React.FC = () => {
       <S.Space />
       <S.Paragraph>esta é uma aplicação de estudo</S.Paragraph>
       <S.Space />
-      <Button
+      <GenericButton
         title="Ir para página de login"
         type="button"
         onClick={goToLogin}

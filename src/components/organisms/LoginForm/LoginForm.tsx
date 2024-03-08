@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NumberInput } from '../../atoms/NumberInput';
 import { PasswordInput } from '../../atoms/PasswordInput';
-import { Button } from '../../atoms/Button';
+import { GenericButton } from '../../atoms/Button';
 import { useLoginForm } from './LoginForm.logic';
 import { PasswordErrorModal } from '../../molecules/PasswordErrorModal';
 
@@ -40,7 +40,7 @@ export const LoginForm: React.FC = () => {
           {errors.password && (
             <S.ErrorSpan>{errors.password.message}</S.ErrorSpan>
           )}
-          <Button title="Fazer Login" type="submit" />
+          <GenericButton title="Fazer Login" type="submit" />
         </form>
       </S.Container>
       {errors.password?.message === 'Senha inválida' && openModal && (

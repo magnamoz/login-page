@@ -8,7 +8,11 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export const Button: React.FC<ButtonProps> = ({ type, title, onClick }) => {
+export const GenericButton: React.FC<ButtonProps> = ({
+  type,
+  title,
+  onClick,
+}) => {
   return (
     <S.Button type={type} onClick={onClick}>
       {title}
