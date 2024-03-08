@@ -1,4 +1,4 @@
-# WIP - em andamento
+# Estudo react-router-dom v6
 
 Projeto de página de login criada para estudo
 
