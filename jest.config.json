@@ -3,5 +3,7 @@
   "verbose": true,
   "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
   "coverageReporters": "lcov",
-  "testEnvironment": "jsdom"
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"],
+  "roots": ["<rootDir>/src"]
 }

@@ -27,4 +27,5 @@
     "./src/**/*.ts", 
     "setupTests.ts"  
   ],
+  "types": ["typePatches"],
 }

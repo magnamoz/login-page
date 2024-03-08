@@ -14,7 +14,7 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <S.Modal $open={open}>
       <S.Content>
-        <S.ImageButton onClick={() => onClose(false)}>
+        <S.ImageButton aria-label="Fechar" onClick={() => onClose(false)}>
           <VscChromeClose />
         </S.ImageButton>
 
